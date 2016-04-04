@@ -1,23 +1,26 @@
-node-keyboard
-=============
+# node-keyboard
+
+:warning: requires sudo
 
 Quick & dirty keyboard keylogger for NodeJS & Linux
 
 Inspired from http://nodebits.org/linux-joystick
 
-Install
--------
+## Install
 
 ```
-npm install git+https://github.com/Bornholm/node-keyboard.git
+npm install git+https://github.com/ewnd9/node-keyboard.git
 ```
 
-Usage
------
+## Usage
+
+```
+$ sudo KEYBOARD_DRIVER=event2 node demo
+```
 
 See demo.js
 
-```javascript
+```js
 var Keyboard = require('./keyboard.js');
 
 var k = new Keyboard('event2'); // 'event2' is the file corresponding to my keyboard in /dev/input/
@@ -27,10 +30,10 @@ k.on('keypress', console.log);
 k.on('error', console.error);
 ```
 
-Events
+## Events
 
-```javascript
-{ 
+```js
+{
   timeS: 1347572085, // Timestamp ( Seconds part )
   timeMS: 741381, // Timestamp ( Microseconds part )
   keyCode: 17, // Keyboard code
@@ -40,7 +43,10 @@ Events
 }
 ```
 
-Licence
--------
+## Problems
+
+- [ ] How to detect a keyboard layout?
+
+## Licence
 
 MIT
